@@ -6,7 +6,7 @@
 <style>
 .container {
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 0 auto;
   padding: 20px;
 }
 
@@ -69,133 +69,64 @@ button:active {
   box-shadow: 0 2px 0 #357a38;
 }
 
-/* Update nav styling to separate header and buttons */
+/* Update nav buttons for 3D effect while keeping orange theme */
 .nav {
   background-color: #ff8c00;
-  padding: 0; /* Remove padding from main nav */
-  display: block; /* Change from flex to block */
-  margin-bottom: 0; /* Remove margin */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-/* New header section styling */
 .nav-header {
-  background-color: #ff8c00;
-  padding: 30px 10px; /* Increased from 10px */
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 0; /* Remove margin */
+  margin-bottom: 10px;
 }
 
-/* New buttons section styling */
+/* Add new horizontal button container */
 .nav-buttons {
-  background-color: #f0f0f0; /* Cambiado de naranja a gris claro */
-  padding: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
-  border-top: 1px solid rgba(0,0,0,0.1); /* Cambiado a Negro transparente */
 }
 
-/* Colores diferentes para cada botón */
-.nav-buttons button:nth-child(1) { /* Clientes */
-  background-color: #4CAF50; /* Verde */
-  box-shadow: 0 5px 0 #357a38;
+/* Style nav buttons */
+.nav button {
+  background-color: #ff8c00;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1em;
+  /* 3D effect additions */
+  box-shadow: 0 5px 0 #cc7000;
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease;
 }
 
-.nav-buttons button:nth-child(1):hover {
-  background-color: #45a049;
+.nav button:hover {
+  background-color: #e67e00;
 }
 
-.nav-buttons button:nth-child(1):active {
-  box-shadow: 0 2px 0 #357a38;
+.nav button:active {
+  top: 3px;
+  box-shadow: 0 2px 0 #cc7000;
 }
 
-.nav-buttons button:nth-child(2) { /* Servicios */
-  background-color: #f44336; /* Rojo */
-  box-shadow: 0 5px 0 #d32f2f;
-}
-
-.nav-buttons button:nth-child(2):hover {
-  background-color: #da190b;
-}
-
-.nav-buttons button:nth-child(2):active {
-  box-shadow: 0 2px 0 #d32f2f;
-}
-
-.nav-buttons button:nth-child(3) { /* Reportes */
-  background-color: #2196F3; /* Azul */
-  box-shadow: 0 5px 0 #1976D2;
-}
-
-.nav-buttons button:nth-child(3):hover {
-  background-color: #0b7dda;
-}
-
-.nav-buttons button:nth-child(3):active {
-  box-shadow: 0 2px 0 #1976D2;
-}
-
-.nav-buttons button:nth-child(4) { /* Exportar JSON */
-  background-color: #9C27B0; /* Morado */
-  box-shadow: 0 5px 0 #7B1FA2;
-}
-
-.nav-buttons button:nth-child(4):hover {
-  background-color: #7B1FA2;
-}
-
-.nav-buttons button:nth-child(4):active {
-  box-shadow: 0 2px 0 #7B1FA2;
-}
-
-.nav-buttons button:nth-child(5) { /* Importar JSON */
-  background-color: #FF9800; /* Naranja */
-  box-shadow: 0 5px 0 #F57C00;
-}
-
-.nav-buttons button:nth-child(5):hover {
-  background-color: #e68a00;
-}
-
-.nav-buttons button:nth-child(5):active {
-  box-shadow: 0 2px 0 #F57C00;
-}
-
-/* Reduce vertical size of header */
-.nav-header .logo-text {
-  font-size: 2.5em; /* Increased from 1.5em */
+.nav .logo-text {
+  font-size: 2em;
   color: white;
   font-weight: bold;
-  margin: 0;
-  line-height: 1.2;
 }
 
-.nav-header .system-title {
+.nav .system-title {
   color: white;
-  font-size: 1.2em; /* Restored from 1em */
-  margin: 5px 0 0 0;
+  font-size: 1.2em;
+  margin: 5px 0;
   padding: 0;
-}
-
-/* Add margin to main containers to separate from nav */
-.container {
-  max-width: 1200px;
-  margin: 20px auto;
-  padding: 20px;
-}
-
-/* Add legend styling */
-.nav-legend {
-  color: white;
-  font-weight: bold;
-  text-align: right;
-  margin-top: 10px;
-  padding-right: 20px;
-  font-size: 14px;
-  width: 100%;
 }
 
 h3 {
@@ -270,61 +201,48 @@ h3 {
 /* Form grid layout */
 #clientForm {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Changed to fixed 3 columns */
-  gap: 25px;
-  margin: 30px 0;
-  padding: 30px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 140, 0, 0.2);
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+  gap: 12px; /* Reduced spacing between fields */
+  margin-bottom: 20px;
 }
 
-/* Adjust specific field sizes for 3-column layout */
-#clientForm .form-group:nth-child(1) { /* Code */
+/* Explicit layout for client form fields to keep Address, Email and Phone on the same row (updated for NIT) */
+#clientForm .form-group:nth-child(1) { /* Código */
   grid-column: span 1;
 }
-
-#clientForm .form-group:nth-child(2) { /* Name */
+#clientForm .form-group:nth-child(2) { /* Nombre */
   grid-column: span 2;
 }
-
-#clientForm .form-group:nth-child(3) { /* Registration */
+#clientForm .form-group:nth-child(3) { /* Registro */
   grid-column: span 1;
 }
-
-#clientForm .form-group:nth-child(4) { /* Business Type */
+#clientForm .form-group:nth-child(4) { /* NIT */
   grid-column: span 1;
 }
-
-#clientForm .form-group:nth-child(5) { /* Address */
-  grid-column: span 3; /* Make address field span 3 columns (full width) */
+#clientForm .form-group:nth-child(5) { /* Giro de la Empresa */
+  grid-column: span 1;
 }
-
-#clientForm .form-group:nth-child(6) { /* Phone */
-  grid-column: span 1; /* Will naturally start on a new row */
+#clientForm .form-group:nth-child(6) { /* Dirección */
+  grid-column: span 1;
+}
+#clientForm .form-group:nth-child(7) { /* Correo Electrónico */
+  grid-column: span 1;
+}
+#clientForm .form-group:nth-child(8) { /* Teléfono */
+  grid-column: span 1;
 }
 
 /* Button group adjustment */
 #clientForm .button-group {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
+  grid-column: span 3; /* Span full width */
 }
 
 /* Update the grid layout for the service form */
 #serviceForm {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 25px; /* Consistent with client form */
-  margin: 30px 0; /* Consistent with client form */
-  padding: 30px; /* Consistent with client form */
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Consistent with client form */
-  border-radius: 12px; /* Consistent with client form */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Consistent with client form */
-  border: 1px solid rgba(255, 140, 0, 0.2); /* Consistent with client form */
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 /* Make specific fields span columns as needed */
@@ -351,42 +269,30 @@ h3 {
 #serviceForm input[type="date"],
 #serviceForm input[type="number"],
 #serviceForm select {
+  padding: 8px;
   width: 100%;
-  padding: 12px 16px; /* Consistent with client form inputs */
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: white;
-  box-sizing: border-box; /* Crucial for consistent width with padding */
+  box-sizing: border-box;
+  height: 38px; /* Consistent height for text, date, number and selects */
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-#serviceForm input[type="text"],
-#serviceForm input[type="date"],
-#serviceForm input[type="number"],
-#serviceForm select { /* Exclude textarea from fixed height */
-  width: 100%;
-  padding: 0 16px; /* Adjusted vertical padding, let height control it */
-  height: 46px; /* Set explicit height for better visibility */
-  line-height: 1; /* For better vertical alignment within the fixed height */
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: white;
+/* Ensure transactionId input matches other inputs in height */
+#transactionId {
+  height: 38px;
+  padding: 8px;
   box-sizing: border-box;
 }
 
 /* Update the service form description input styling */
 #serviceForm .form-group:nth-child(3) textarea {
   width: 100%;
-  min-height: 90px; /* Increased min-height for better visibility */
+  min-height: 60px;
   resize: vertical;
   padding: 8px;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 4px;
-  font-size: 16px; /* Increased font size */
 }
 
 /* Form controls for reports section */
@@ -427,6 +333,11 @@ select, input {
   box-sizing: border-box;
 }
 
+/* Add to existing CSS */
+#clientForm .form-group:nth-child(6) { /* Address field (moved due to NIT) */
+  grid-column: span 2; /* Make address field span 2 columns */
+}
+
 /* Add this to the existing CSS section */
 #serviceListFilter {
   width: auto; /* Override the 100% width set for all selects */
@@ -436,28 +347,35 @@ select, input {
 
 #serviceClientFilter {
   width: auto;
-  min-width: 200px;
+  /* Keep a reasonable minimum width and add a very small left gap to separate from status */
+  min-width: 160px;
   margin-bottom: 20px;
+  margin-left: 2px; /* moved slightly more to the left */
+  align-self: center;
 }
 
 /* Update the filter container to show filters side by side */
 #services .filter-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  /* Place status and client filters side by side with a little space, keep TOTAL compact */
+  grid-template-columns: 1fr 1fr 0.35fr;
+  gap: 12px; /* slightly reduced gap for tighter alignment */
   margin-bottom: 20px;
-  align-items: end;
+  align-items: center; /* vertically center labels and selects */
 }
 
 /* Add styles for the total amount display */
 .totals-container {
   background: #ff8c00;
-  padding: 10px;
+  /* Tighter padding and larger text for emphasis while keeping the box compact */
+  padding: 6px;
   border-radius: 4px;
   color: white;
   font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+  font-size: 16px; /* Slightly larger letter size */
+  min-width: 80px; /* Reduce minimum width to make TOTAL smaller */
 }
 
 /* Ensure consistent height and styling for report filter inputs/selects */
@@ -552,275 +470,6 @@ select, input {
   margin-bottom: 10px;
 }
 
-/* Professional form styling for client registration */
-#clientForm {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Changed to fixed 3 columns */
-  gap: 25px;
-  margin: 30px 0;
-  padding: 30px;
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 140, 0, 0.2);
-}
-
-#clientForm .form-group {
-  margin-bottom: 0;
-  position: relative;
-}
-
-#clientForm label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-#clientForm input {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: white;
-}
-
-#clientForm input:focus {
-  outline: none;
-  border-color: #ff8c00;
-  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
-  transform: translateY(-1px);
-}
-
-#clientForm input:hover {
-  border-color: #ff8c00;
-}
-
-#clientForm .button-group {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-#clientForm button {
-  position: relative;
-  width: 60px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#clientForm button[type="submit"] {
-  background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%);
-  box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
-}
-
-#clientForm button[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 180, 219, 0.6);
-}
-
-#clientForm button[onclick*="delete"] {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-}
-
-#clientForm button[onclick*="delete"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
-}
-
-#clientForm button:active {
-  transform: translateY(0);
-}
-
-/* Professional form styling for service registration */
-#serviceForm {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px; /* Consistent with client form */
-  margin: 30px 0; /* Consistent with client form */
-  padding: 30px; /* Consistent with client form */
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); /* Consistent with client form */
-  border-radius: 12px; /* Consistent with client form */
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Consistent with client form */
-  border: 1px solid rgba(255, 140, 0, 0.2); /* Consistent with client form */
-}
-
-#serviceForm .form-group {
-  margin-bottom: 0; /* Override default .form-group margin */
-  position: relative;
-}
-
-#serviceForm label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #2c3e50;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-#serviceForm input[type="text"],
-#serviceForm input[type="date"],
-#serviceForm input[type="number"],
-#serviceForm select {
-  width: 100%;
-  padding: 12px 16px; /* Consistent with client form inputs */
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: white;
-  box-sizing: border-box; /* Crucial for consistent width with padding */
-}
-
-#serviceForm input[type="text"],
-#serviceForm input[type="date"],
-#serviceForm input[type="number"],
-#serviceForm select { /* Exclude textarea from fixed height */
-  width: 100%;
-  padding: 0 16px; /* Adjusted vertical padding, let height control it */
-  height: 46px; /* Set explicit height for better visibility */
-  line-height: 1; /* For better vertical alignment within the fixed height */
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  background: white;
-  box-sizing: border-box;
-}
-
-#serviceForm input:focus,
-#serviceForm select:focus {
-  outline: none;
-  border-color: #ff8c00;
-  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
-  transform: translateY(-1px);
-}
-
-#serviceForm input:hover,
-#serviceForm select:hover {
-  border-color: #ff8c00;
-}
-
-/* Specific adjustments for textarea within service form */
-#serviceForm textarea {
-  min-height: 90px; /* Increased min-height for better visibility */
-  resize: vertical;
-}
-
-/* Button group specific to service form */
-#serviceForm .button-group {
-  grid-column: 1 / -1;
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-/* Button styling for service form */
-#serviceForm button {
-  position: relative;
-  width: 60px;
-  height: 45px;
-  border-radius: 50%;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#serviceForm button[type="submit"] {
-  background: linear-gradient(135deg, #00b4db 0%, #0083b0 100%); /* Celeste */
-  box-shadow: 0 4px 15px rgba(0, 180, 219, 0.4);
-}
-
-#serviceForm button[type="submit"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 180, 219, 0.6);
-}
-
-#serviceForm button[onclick*="delete"] {
-  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%); /* Orange */
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
-}
-
-#serviceForm button[onclick*="delete"]:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
-}
-
-#serviceForm button:active {
-  transform: translateY(0);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  #clientForm {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  /* Apply same responsive adjustment to service form */
-  #serviceForm {
-    grid-template-columns: 1fr;
-    padding: 20px;
-  }
-  #serviceForm .form-group:nth-child(1),
-  #serviceForm .form-group:nth-child(2),
-  #serviceForm .form-group:nth-child(3),
-  #serviceForm .form-group:nth-child(4),
-  #serviceForm .form-group:nth-child(5),
-  #serviceForm .form-group:nth-child(6) {
-    grid-column: span 1; /* Reset column spanning on small screens */
-  }
-}
-
-/* Table improvements */
-#clientList {
-  margin-top: 30px;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-#clientList th {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  font-weight: 600;
-  padding: 15px 10px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-#clientList td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #eee;
-}
-
-#clientList tr:hover {
-  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-  transform: scale(1.01);
-  transition: all 0.2s ease;
-}
-
 #reportTable table {
   width: 100%;
   margin-top: 20px;
@@ -848,52 +497,17 @@ select, input {
 #reportTable p {
   margin: 10px 0;
 }
+</style>
 
-/* Toast Notification Styling */
-#toast {
-  visibility: hidden; /* Hidden by default. Visible on click */
-  min-width: 250px; /* Set a default minimum width */
-  margin-left: -125px; /* Divide value of min-width by 2 */
-  background-color: #333; /* Black background color */
-  color: #fff; /* White text color */
-  text-align: center; /* Centered text */
-  border-radius: 8px; /* Rounded borders */
-  padding: 16px; /* Padding */
-  position: fixed; /* Sit on top of the screen */
-  z-index: 1002; /* Add a z-index if needed */
-  left: 50%; /* Center the snackbar */
-  bottom: 30px; /* 30px from the bottom */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transition: opacity 0.5s, visibility 0.5s;
-}
-
-#toast.show {
-  visibility: visible; /* Show the snackbar */
-  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  animation: fadein 0.5s, fadeout 0.5s 2.5s;
-  opacity: 1;
-}
-
-/* Animations to fade the snackbar in and out */
-@-webkit-keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-  from {bottom: 0; opacity: 0;}
-  to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-  from {bottom: 30px; opacity: 1;}
-  to {bottom: 0; opacity: 0;}
+<style>
+.footer {
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+  padding: 12px 0;
+  background: transparent;
+  border-top: 1px solid #eee;
+  margin-top: 20px;
 }
 </style>
 
@@ -902,7 +516,6 @@ select, input {
   <div class="nav-header">
     <span class="logo-text">ITCPO</span>
     <h1 class="system-title">Sistema de Control de Clientes y Servicios</h1>
-    <div class="nav-legend">Powered by ITCPO</div>
   </div>
   <div class="nav-buttons">
     <button onclick="showSection('clients')">Clientes</button>
@@ -911,6 +524,7 @@ select, input {
     <button onclick="exportToJson()">Exportar JSON</button>
     <input type="file" id="jsonFileInput" style="display:none" onchange="importFromJson(this.files[0])">
     <button onclick="document.getElementById('jsonFileInput').click()">Importar JSON</button>
+    <button style="background-color:#d9534f; box-shadow:0 5px 0 #b53d38;" onclick="showDeleteAllModal()">Eliminar Todo</button>
   </div>
 </div>
 <div id="clients" class="container">
@@ -929,6 +543,10 @@ select, input {
       <input type="text" id="clientRegistration" required>
     </div>
     <div class="form-group">
+      <label>NIT:</label>
+      <input type="text" id="clientNIT">
+    </div>
+    <div class="form-group">
         <label>Giro de la Empresa:</label>
         <input type="text" id="clientBusinessType" required>
       </div>
@@ -937,20 +555,16 @@ select, input {
       <input type="text" id="clientAddress" required>
     </div>
     <div class="form-group">
+      <label>Correo Electrónico:</label>
+      <input type="email" id="clientEmail" required>
+    </div>
+    <div class="form-group">
       <label>Teléfono:</label>
       <input type="tel" id="clientPhone" required>
     </div>
-    <div class="form-group">
-      <label>NIT:</label>
-      <input type="text" id="clientNIT" required>
-    </div>
     <div class="button-group">
-      <button type="submit" title="Guardar">
-        <i style="font-size: 18px;">💾</i>
-      </button>
-      <button type="button" onclick="deleteClient()" title="Eliminar">
-        <i style="font-size: 18px;">🗑️</i>
-      </button>
+      <button type="submit">Guardar</button>
+      <button type="button" onclick="deleteClient()">Eliminar</button>
     </div>
   </form>
   
@@ -961,10 +575,11 @@ select, input {
         <th>Código</th>
         <th>Nombre</th>
         <th>Registro</th>
+        <th>NIT</th>
         <th>Giro</th>
         <th>Dirección</th>
+        <th>Correo</th>
         <th>Teléfono</th>
-        <th>NIT</th>
       </tr>
     </thead>
     <tbody></tbody>
@@ -982,7 +597,7 @@ select, input {
     </div>
     <div class="form-group">
       <label>Código Transacción:</label>
-      <input type="text" id="transactionId" required readonly>
+      <input type="text" id="transactionId" required>
     </div>
     <div class="form-group">
       <label>Descripción:</label>
@@ -1004,12 +619,8 @@ select, input {
       </select>
     </div>
     <div class="button-group">
-      <button type="submit" title="Guardar">
-        <i style="font-size: 18px;">💾</i>
-      </button>
-      <button type="button" onclick="deleteService()" title="Eliminar">
-        <i style="font-size: 18px;">🗑️</i>
-      </button>
+      <button type="submit">Guardar</button>
+      <button type="button" onclick="deleteService()">Eliminar</button>
     </div>
   </form>
 
@@ -1089,104 +700,86 @@ select, input {
   <div class="modal-content">
     <span class="close-button" onclick="closeHelp()">&times;</span>
     <h2>Guía de Uso del Sistema</h2>
-    
+
     <div class="help-section">
-      <h3>Gestión de Clientes</h3>
+      <h3>Clientes</h3>
       <ul>
-        <li>Para agregar un nuevo cliente, complete todos los campos del formulario y presione "Guardar"</li>
-        <li>Para editar un cliente existente, haga clic en su registro en la tabla y modifique los datos</li>
-        <li>Para eliminar un cliente, selecciónelo y presione el botón "Eliminar"</li>
+        <li>Agregar: Complete el formulario de "Registro de Clientes" y presione "Guardar". Todos los campos obligatorios deben llenarse.</li>
+        <li>Editar: Haga clic en una fila de la lista de clientes; los datos se cargarán en el formulario para modificar y guardar.</li>
+        <li>Eliminar: Cargue el cliente en el formulario y presione "Eliminar". Aparecerá un cuadro de confirmación.</li>
       </ul>
     </div>
 
     <div class="help-section">
-      <h3>Gestión de Servicios</h3>
+      <h3>Servicios</h3>
       <ul>
-        <li>Seleccione un cliente del menú desplegable</li>
-        <li>Complete los detalles del servicio: código de transacción, descripción, fecha, monto y estatus</li>
-        <li>Use los filtros para ver servicios específicos por estatus o cliente</li>
-        <li>El total mostrado se actualiza según los filtros aplicados</li>
+        <li>Seleccione el cliente en el campo "Código Cliente" antes de crear el servicio.</li>
+        <li>Complete: Código de Transacción, Descripción, Fecha, Monto y Estatus; luego presione "Guardar".</li>
+        <li>La lista de servicios se puede filtrar por Estatus y por Cliente; el total mostrado se actualizará según los filtros.</li>
+        <li>Para editar o eliminar un servicio, selecciónelo desde la lista para cargarlo en el formulario.</li>
       </ul>
     </div>
 
     <div class="help-section">
       <h3>Reportes</h3>
       <ul>
-        <li>Seleccione el rango de fechas para el reporte</li>
-        <li>Filtre por cliente y/o estatus si lo desea</li>
-        <li>Use los botones para exportar a PDF o Excel</li>
-        <li>Los reportes mostrarán el total de los servicios filtrados</li>
+        <li>Seleccione Fecha Inicio y Fecha Fin para definir el periodo del reporte.</li>
+        <li>Opcionalmente filtre por Cliente y/o Estatus para limitar los resultados.</li>
+        <li>Use "Generar Reporte" para ver datos en pantalla; use "Exportar a PDF" o "Exportar a Excel" para descargar los resultados.</li>
+        <li>El reporte muestra filas ordenadas por fecha y un total acumulado al final.</li>
       </ul>
     </div>
 
     <div class="help-section">
-      <h3>Respaldo de Datos</h3>
+      <h3>Respaldo e Importación</h3>
       <ul>
-        <li>Use "Exportar JSON" para guardar una copia de seguridad de todos los datos</li>
-        <li>Use "Importar JSON" para restaurar datos desde una copia de seguridad previa</li>
+        <li>Exportar JSON: descarga un archivo con todos los clientes y servicios actualmente almacenados.</li>
+        <li>Importar JSON: cargue un archivo válido generado por la opción de exportación; los datos reemplazarán los actuales tras la importación.</li>
+        <li>Verifique el formato del archivo antes de importar; si hay errores recibirá un aviso en pantalla.</li>
       </ul>
     </div>
+
+    <div class="help-section">
+      <h3>Eliminar Todo (Acción Irreversible)</h3>
+      <ul>
+        <li>La opción "Eliminar Todo" borra permanentemente todos los clientes y servicios.</li>
+        <li>Para confirmar deberá escribir exactamente <code>ELIMINAR TODO</code> en el cuadro de confirmación; de lo contrario la acción no se ejecutará.</li>
+        <li>Esta acción no puede deshacerse: utilice primero la opción de Exportar JSON si necesita respaldo.</li>
+      </ul>
+    </div>
+
+    <div class="help-section">
+      <h3>Mensajes y Confirmaciones</h3>
+      <ul>
+        <li>Todos los avisos, errores y confirmaciones se presentan en cuadros de texto/modales para mayor claridad.</li>
+        <li>Lea detenidamente los mensajes antes de confirmar acciones críticas.</li>
+      </ul>
+    </div>
+
+    <p class="footer">Derechos Reservados para Carlos Alfredo Castillo Flores - ITCPO - 2024</p>
   </div>
 </div>
 
-<div id="toast"></div>
+<div class="footer" aria-hidden="true">Derechos Reservados para Carlos Alfredo Castillo Flores - ITCPO - 2024</div>
 
 <script>
 let clients = JSON.parse(localStorage.getItem('clients')) || [];
 let services = JSON.parse(localStorage.getItem('services')) || [];
 
-function showToast(message) {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.className = "show";
-  setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-}
-
 function saveDataToLocalStorage() {
+  // save everything currently used by the app
   localStorage.setItem('clients', JSON.stringify(clients));
   localStorage.setItem('services', JSON.stringify(services));
 }
 
 function formatDate(dateStr) {
-  if (!dateStr) return '';
   const date = new Date(dateStr + 'T00:00:00'); // Add time component to avoid timezone issues
-  // Check if date is valid
-  if (isNaN(date.getTime())) {
-    console.warn('Invalid date string:', dateStr);
-    return dateStr; // Return original string if parsing fails
-  }
   return date.toLocaleDateString('es-ES', {
     timeZone: 'UTC', // Force UTC timezone
     day: '2-digit',
     month: '2-digit',
     year: 'numeric'
   });
-}
-
-// Helper function to prepare the service form for a new entry
-function prepareServiceFormForNewEntry() {
-  // Reset the form (clears current values but keeps dropdown options)
-  document.getElementById('serviceForm').reset();
-
-  // 1. Generate next transaction ID (correlative)
-  let maxId = 0;
-  if (services.length > 0) {
-    maxId = services.reduce((currentMax, service) => {
-      const idNum = parseInt(service.transactionId);
-      // Ensure it's a number and greater than currentMax
-      return (isNaN(idNum) || idNum < currentMax) ? currentMax : idNum;
-    }, 0); // Start from 0 to handle cases where there are no services or invalid IDs
-  }
-  const nextId = maxId + 1;
-  document.getElementById('transactionId').value = nextId.toString();
-  // The transactionId input is set to readonly in HTML, so no need to set it here.
-
-  // 2. Preload current date
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
-  const day = String(today.getDate()).padStart(2, '0');
-  document.getElementById('serviceDate').value = `${year}-${month}-${day}`;
 }
 
 function showSection(section) {
@@ -1197,22 +790,15 @@ function showSection(section) {
   
   if (section === 'clients') {
     updateClientList();
-    document.getElementById('clientForm').reset(); // Clear client form on section change
   }
   if (section === 'services') {
     updateServiceList();
     populateClientSelect();
     populateClientFilter();
-    // After populating, prepare the form for a new entry (auto-generate ID and date)
-    prepareServiceFormForNewEntry(); 
+    setNextTransactionId(); // set correlativo automático al entrar a Servicios
   }
   if (section === 'reports') {
-    populateReportClientFilter();
-    document.getElementById('startDate').value = ''; // Clear report dates on section change
-    document.getElementById('endDate').value = '';
-    document.getElementById('filterStatus').value = 'Todos';
-    document.getElementById('reportClientFilter').value = 'Todos';
-    document.getElementById('reportTable').innerHTML = ''; // Clear report table
+    populateReportClientFilter(); // Add this line
   }
 }
 
@@ -1257,62 +843,42 @@ function populateReportClientFilter() {
 // Client functions
 document.getElementById('clientForm').onsubmit = function(e) {
   e.preventDefault();
-  const code = document.getElementById('clientCode').value.trim();
-  const name = document.getElementById('clientName').value.trim();
-  const registration = document.getElementById('clientRegistration').value.trim();
-  const businessType = document.getElementById('clientBusinessType').value.trim();
-  const address = document.getElementById('clientAddress').value.trim();
-  const phone = document.getElementById('clientPhone').value.trim();
-  const nit = document.getElementById('clientNIT').value.trim();
-
-  if (!code || !name) {
-      showToast('Código y Nombre de cliente son campos obligatorios.');
-      return;
-  }
+  const code = document.getElementById('clientCode').value;
+  const name = document.getElementById('clientName').value;
+  const registration = document.getElementById('clientRegistration').value;
+  const nit = document.getElementById('clientNIT').value;
+  const businessType = document.getElementById('clientBusinessType').value;
+  const address = document.getElementById('clientAddress').value;
+  const email = document.getElementById('clientEmail').value;
+  const phone = document.getElementById('clientPhone').value;
   
   const clientIndex = clients.findIndex(c => c.code === code);
+  const clientObj = { code, name, registration, nit, businessType, address, email, phone };
   if (clientIndex === -1) {
-    // Check for duplicate code if adding new client
-    if (clients.some(c => c.code === code)) {
-        showToast('Ya existe un cliente con este código.');
-        return;
-    }
-    clients.push({ code, name, registration, businessType, address, phone, nit });
-    showToast('Cliente agregado exitosamente.');
+    clients.push(clientObj);
   } else {
-    clients[clientIndex] = { code, name, registration, businessType, address, phone, nit };
-    showToast('Cliente actualizado exitosamente.');
+    clients[clientIndex] = clientObj;
   }
   
   saveDataToLocalStorage();
   updateClientList();
   populateClientSelect();
   populateClientFilter(); // Update client filter
-  populateReportClientFilter(); // Update report client filter
+  populateReportClientFilter(); // ensure report client select is updated
   this.reset();
 };
 
 function deleteClient() {
-  const clientCode = document.getElementById('clientCode').value.trim();
-  if (!clientCode) {
-    showToast('Seleccione un cliente para eliminar.');
-    return;
-  }
-  if (!confirm('¿Está seguro de eliminar este cliente y todos sus servicios asociados?')) {
-    showToast('Operación cancelada.'); // Added toast for cancellation
-    return;
-  }
-  
-  clients = clients.filter(c => c.code !== clientCode);
-  services = services.filter(s => s.clientCode !== clientCode); // Delete associated services
-  
-  saveDataToLocalStorage();
-  updateClientList();
-  populateClientSelect();
-  populateClientFilter(); // Update client filter
-  populateReportClientFilter(); // Update report client filter
-  document.getElementById('clientForm').reset();
-  showToast('Cliente y servicios asociados eliminados exitosamente.');
+  const clientCode = document.getElementById('clientCode').value;
+  showConfirmDialog('¿Está seguro de eliminar este cliente?', function() {
+    clients = clients.filter(c => c.code !== clientCode);
+    saveDataToLocalStorage();
+    updateClientList();
+    populateClientSelect();
+    populateClientFilter(); // Update client filter
+    populateReportClientFilter();
+    document.getElementById('clientForm').reset();
+  });
 }
 
 function updateClientList() {
@@ -1325,10 +891,11 @@ function updateClientList() {
       <td>${client.code}</td>
       <td>${client.name}</td>
       <td>${client.registration || ''}</td>
+      <td>${client.nit || ''}</td>
       <td>${client.businessType || ''}</td>
       <td>${client.address || ''}</td>
+      <td>${client.email || ''}</td>
       <td>${client.phone || ''}</td>
-      <td>${client.nit || ''}</td>
     `;
     tr.onclick = () => selectClient(client.code);
     tbody.appendChild(tr);
@@ -1341,10 +908,11 @@ function selectClient(code) {
     document.getElementById('clientCode').value = client.code;
     document.getElementById('clientName').value = client.name;
     document.getElementById('clientRegistration').value = client.registration || '';
+    document.getElementById('clientNIT').value = client.nit || '';
     document.getElementById('clientBusinessType').value = client.businessType || '';
     document.getElementById('clientAddress').value = client.address || '';
+    document.getElementById('clientEmail').value = client.email || '';
     document.getElementById('clientPhone').value = client.phone || '';
-    document.getElementById('clientNIT').value = client.nit || '';
   }
 }
 
@@ -1353,65 +921,42 @@ document.getElementById('serviceForm').onsubmit = function(e) {
   e.preventDefault();
   const service = {
     clientCode: document.getElementById('serviceClientCode').value,
-    transactionId: document.getElementById('transactionId').value.trim(),
-    description: document.getElementById('serviceDescription').value.trim(),
+    transactionId: document.getElementById('transactionId').value,
+    description: document.getElementById('serviceDescription').value,
     date: document.getElementById('serviceDate').value,
     amount: parseFloat(document.getElementById('serviceAmount').value),
     status: document.getElementById('serviceStatus').value
   };
-
-  if (!service.clientCode || !service.transactionId || !service.description || !service.date || isNaN(service.amount)) {
-    showToast('Todos los campos de servicio son obligatorios.');
-    return;
-  }
   
   const serviceIndex = services.findIndex(s => s.transactionId === service.transactionId);
   if (serviceIndex === -1) {
-    // New service
-    // A check for duplicate transaction ID is included, although it's auto-generated and should be unique
-    if (services.some(s => s.transactionId === service.transactionId)) {
-        showToast('Error: Ya existe un servicio con este código de transacción. Por favor, recargue el formulario.');
-        return;
-    }
     services.push(service);
-    showToast('Servicio agregado exitosamente.');
   } else {
-    // Existing service: Update
     services[serviceIndex] = service;
-    showToast('Servicio actualizado exitosamente.');
   }
   
   saveDataToLocalStorage();
   updateServiceList();
-  prepareServiceFormForNewEntry(); // Prepare form for the next new entry
+  this.reset();
+  setNextTransactionId(); // asigna siguiente correlativo después de guardar
 };
 
 function deleteService() {
-  const transactionId = document.getElementById('transactionId').value.trim();
-  if (!transactionId) {
-    showToast('Seleccione un servicio para eliminar.');
-    return;
-  }
-  if (!confirm('¿Está seguro de eliminar este servicio?')) {
-    showToast('Operación cancelada.'); // Added toast for cancellation
-    return;
-  }
-  
-  services = services.filter(s => s.transactionId !== transactionId);
-  saveDataToLocalStorage();
-  updateServiceList();
-  prepareServiceFormForNewEntry(); // After deletion, prepare for a new entry
-  showToast('Servicio eliminado exitosamente.');
+  const transactionId = document.getElementById('transactionId').value;
+  showConfirmDialog('¿Está seguro de eliminar este servicio?', function() {
+    services = services.filter(s => s.transactionId !== transactionId);
+    saveDataToLocalStorage();
+    updateServiceList();
+    document.getElementById('serviceForm').reset();
+  });
 }
-
-document.getElementById('serviceListFilter').addEventListener('change', updateServiceList);
-document.getElementById('serviceClientFilter').addEventListener('change', updateServiceList);
 
 function updateServiceList() {
   const tbody = document.querySelector('#serviceList tbody');
   tbody.innerHTML = '';
   
-  const filterStatus = document.getElementById('serviceListFilter').value;
+  const filterSelect = document.getElementById('serviceListFilter');
+  const filterStatus = filterSelect.value;
   const filterClient = document.getElementById('serviceClientFilter').value;
 
   let filteredServices = services;
@@ -1433,11 +978,6 @@ function updateServiceList() {
   // Sort by date ascending
   filteredServices.sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  if (filteredServices.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="6" style="text-align: center;">No hay servicios para mostrar con los filtros seleccionados.</td></tr>';
-    return;
-  }
-
   filteredServices.forEach(service => {
     const tr = document.createElement('tr');
     tr.innerHTML = `
@@ -1457,7 +997,7 @@ function selectService(transactionId) {
   const service = services.find(s => s.transactionId === transactionId);
   if (service) {
     document.getElementById('serviceClientCode').value = service.clientCode;
-    document.getElementById('transactionId').value = service.transactionId; // This field remains readonly
+    document.getElementById('transactionId').value = service.transactionId;
     document.getElementById('serviceDescription').value = service.description;
     document.getElementById('serviceDate').value = service.date;
     document.getElementById('serviceAmount').value = service.amount;
@@ -1473,30 +1013,17 @@ function generateReport() {
   const clientFilter = document.getElementById('reportClientFilter').value;
 
   if (!startDate || !endDate) {
-    showToast('Por favor seleccione un rango de fechas para generar el reporte.');
-    return;
-  }
-
-  // Ensure dates are parsed consistently at midnight UTC
-  const startDateTime = new Date(startDate + 'T00:00:00');
-  const endDateTime = new Date(endDate + 'T00:00:00');
-
-  if (isNaN(startDateTime.getTime()) || isNaN(endDateTime.getTime())) {
-    showToast('Fechas de inicio o fin inválidas.');
-    return;
-  }
-
-  if (startDateTime > endDateTime) {
-    showToast('La fecha de inicio no puede ser posterior a la fecha de fin.');
+    showMessage('Por favor seleccione un rango de fechas');
     return;
   }
 
   let filteredServices = services.filter(service => {
     // Create date objects with time set to midnight for consistent comparison
     const serviceDate = new Date(service.date + 'T00:00:00');
+    const startDateTime = new Date(startDate + 'T00:00:00');
+    const endDateTime = new Date(endDate + 'T00:00:00');
     
-    const dateFilter = serviceDate >= startDateTime && 
-                      serviceDate <= endDateTime;
+    const dateFilter = serviceDate >= startDateTime && serviceDate <= endDateTime;
     const statusFilter = status === 'Todos' || service.status === status;
     const clientFilterMatch = clientFilter === 'Todos' || service.clientCode === clientFilter;
     
@@ -1506,9 +1033,8 @@ function generateReport() {
   // Sort by date ascending
   filteredServices.sort((a, b) => new Date(a.date) - new Date(b.date));
 
+  // Calculate total amount
   const totalAmount = filteredServices.reduce((sum, service) => sum + service.amount, 0);
-  const iva = totalAmount * 0.13;
-  const totalConIVA = totalAmount + iva;
 
   const reportTable = document.getElementById('reportTable');
   reportTable.innerHTML = `
@@ -1519,7 +1045,7 @@ function generateReport() {
     <table>
       <thead>
         <tr>
-          <th>Código Trs</th>
+          <th>Código Transac</th>
           <th>Código Cliente</th>
           <th>Descripción</th>
           <th>Fecha</th>
@@ -1528,7 +1054,7 @@ function generateReport() {
         </tr>
       </thead>
       <tbody>
-        ${filteredServices.length > 0 ? filteredServices.map(service => `
+        ${filteredServices.map(service => `
           <tr>
             <td>${service.transactionId}</td>
             <td>${service.clientCode}</td>
@@ -1537,12 +1063,10 @@ function generateReport() {
             <td>$${service.amount.toFixed(2)}</td>
             <td>${service.status}</td>
           </tr>
-        `).join('') : '<tr><td colspan="6" style="text-align: center;">No hay servicios para este reporte.</td></tr>'}
+        `).join('')}
       </tbody>
     </table>
     <p style="margin-top: 20px;"><strong>Total sin IVA:</strong> $${totalAmount.toFixed(2)}</p>
-    <p style="margin-top: 5px;"><strong>IVA (13%):</strong> $${iva.toFixed(2)}</p>
-    <p style="margin-top: 5px;"><strong>Total con IVA:</strong> $${totalConIVA.toFixed(2)}</p>
   `;
 }
 
@@ -1561,28 +1085,20 @@ function exportToPDF() {
   const status = document.getElementById('filterStatus').value;
   const clientFilter = document.getElementById('reportClientFilter').value;
 
-  if (!startDate || !endDate) {
-    showToast('Por favor seleccione un rango de fechas para exportar a PDF.');
-    return;
-  }
-
-  // Ensure dates are parsed consistently at midnight UTC for filtering
-  const startDateTime = new Date(startDate + 'T00:00:00');
-  const endDateTime = new Date(endDate + 'T00:00:00');
-  
   doc.text('Reporte de Servicios', 14, 15);
   doc.setFontSize(11);
-  doc.text(`Período: ${formatDate(startDate)} - ${formatDate(endDate)}`, 14, 25);
+  doc.text(`Período: ${startDate} - ${endDate}`, 14, 25);
   doc.text(`Estatus: ${status}`, 14, 30);
   
   if (clientFilter !== 'Todos') {
-    doc.text(`Cliente: ${getClientName(clientFilter)}`, 14, 35);
+    const client = clients.find(c => c.code === clientFilter);
+    doc.text(`Cliente: ${client ? client.name : clientFilter}`, 14, 35);
   }
 
   const filteredServices = services.filter(service => {
-    const serviceDate = new Date(service.date + 'T00:00:00'); // Consistent date parsing
-    const dateFilter = serviceDate >= startDateTime && 
-                      serviceDate <= endDateTime;
+    const serviceDate = new Date(service.date);
+    const dateFilter = serviceDate >= new Date(startDate) && 
+                      serviceDate <= new Date(endDate);
     const statusFilter = status === 'Todos' || service.status === status;
     const clientFilterMatch = clientFilter === 'Todos' || service.clientCode === clientFilter;
     
@@ -1602,25 +1118,19 @@ function exportToPDF() {
   ]);
 
   const totalAmount = filteredServices.reduce((sum, service) => sum + service.amount, 0);
-  const iva = totalAmount * 0.13;
-  const totalConIVA = totalAmount + iva;
 
   doc.autoTable({
     head: [['Código Trs', 'Código Cliente', 'Descripción', 'Fecha', 'Monto', 'Estatus']],
     body: tableData,
-    startY: 40, // Adjusted startY to give more space for header text
+    startY: 35,
     theme: 'grid',
     columnStyles: {
       3: {cellWidth: 25} // Set specific width for date column
     }
   });
 
-  const finalY = doc.previousAutoTable.finalY + 10;
-  doc.text(`Total sin IVA: $${totalAmount.toFixed(2)}`, 14, finalY);
-  doc.text(`IVA (13%): $${iva.toFixed(2)}`, 14, finalY + 10);
-  doc.text(`Total con IVA: $${totalConIVA.toFixed(2)}`, 14, finalY + 20);
+  doc.text(`Total sin IVA: $${totalAmount.toFixed(2)}`, 14, doc.previousAutoTable.finalY + 10);
   doc.save('reporte-servicios.pdf');
-  showToast('Reporte exportado a PDF exitosamente.'); // Added toast
 }
 
 function exportToExcel() {
@@ -1629,19 +1139,10 @@ function exportToExcel() {
   const status = document.getElementById('filterStatus').value;
   const clientFilter = document.getElementById('reportClientFilter').value;
 
-  if (!startDate || !endDate) {
-    showToast('Por favor seleccione un rango de fechas para exportar a Excel.');
-    return;
-  }
-
-  // Ensure dates are parsed consistently at midnight UTC for filtering
-  const startDateTime = new Date(startDate + 'T00:00:00');
-  const endDateTime = new Date(endDate + 'T00:00:00');
-
   const filteredServices = services.filter(service => {
-    const serviceDate = new Date(service.date + 'T00:00:00'); // Consistent date parsing
-    const dateFilter = serviceDate >= startDateTime && 
-                      serviceDate <= endDateTime;
+    const serviceDate = new Date(service.date);
+    const dateFilter = serviceDate >= new Date(startDate) && 
+                      serviceDate <= new Date(endDate);
     const statusFilter = status === 'Todos' || service.status === status;
     const clientFilterMatch = clientFilter === 'Todos' || service.clientCode === clientFilter;
     
@@ -1655,7 +1156,7 @@ function exportToExcel() {
     'Código Transacción': service.transactionId,
     'Código Cliente': service.clientCode,
     'Descripción': service.description,
-    'Fecha': formatDate(service.date), // Format date for Excel output
+    'Fecha': service.date,
     'Monto': service.amount,
     'Estatus': service.status
   })));
@@ -1663,7 +1164,6 @@ function exportToExcel() {
   const workbook = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(workbook, worksheet, 'Servicios');
   XLSX.writeFile(workbook, 'reporte-servicios.xlsx');
-  showToast('Reporte exportado a Excel exitosamente.'); // Added toast
 }
 
 function exportToJson() {
@@ -1691,20 +1191,35 @@ function exportToJson() {
   // Cleanup
   window.URL.revokeObjectURL(url);
   downloadAnchor.remove();
-  showToast('Datos exportados exitosamente.');
+}
+
+// Asigna el siguiente número correlativo para Código Transacción
+function setNextTransactionId() {
+  const input = document.getElementById('transactionId');
+  // If user has already selected/filled a transaction id, don't override
+  if (!input) return;
+  if (document.activeElement === input && input.value.trim() !== '') return;
+  // Determine max numeric transaction id found, ignoring non-digits
+  let maxNum = 0;
+  services.forEach(s => {
+    const digits = (s.transactionId || '').toString().match(/\d+/);
+    if (digits) {
+      const num = parseInt(digits[0], 10);
+      if (!isNaN(num) && num > maxNum) maxNum = num;
+    }
+  });
+  const next = maxNum + 1;
+  input.value = next.toString();
 }
 
 function importFromJson(file) {
-  if (!file) {
-    showToast('Ningún archivo seleccionado para importar.'); // Added toast
-    return;
-  }
+  if (!file) return;
   
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
       const data = JSON.parse(e.target.result);
-      if (data.clients && Array.isArray(data.clients) && data.services && Array.isArray(data.services)) {
+      if (data.clients && data.services) {
         clients = data.clients;
         services = data.services;
         saveDataToLocalStorage();
@@ -1713,22 +1228,145 @@ function importFromJson(file) {
         populateClientSelect();
         populateClientFilter(); // Update client filter
         populateReportClientFilter(); // Update report client filter
-        // After importing, ensure service form is ready for a new entry
-        prepareServiceFormForNewEntry(); 
-        showToast('Datos importados exitosamente');
+        showMessage('Datos importados exitosamente');
       } else {
-        showToast('Formato de archivo JSON inválido. Se esperan las claves "clients" y "services" como arrays.');
+        showMessage('Formato de archivo inválido');
       }
     } catch (error) {
-      showToast('Error al leer el archivo o formato JSON incorrecto: ' + error.message);
-      console.error('Error importing JSON:', error);
+      showMessage('Error al leer el archivo: ' + error.message);
     }
-  };
-  reader.onerror = function() {
-    showToast('Error al leer el archivo.');
   };
   reader.readAsText(file);
 }
+
+function showDeleteAllModal() {
+  // Show the delete-all modal
+  const modal = document.getElementById('deleteAllModal');
+  if (!modal) return;
+  modal.style.display = 'block';
+  const ta = modal.querySelector('textarea');
+  if (ta) ta.focus();
+}
+
+function closeDeleteAllModal() {
+  const modal = document.getElementById('deleteAllModal');
+  if (modal) modal.style.display = 'none';
+}
+
+// Generic message modal (text box) and confirm modal using callbacks
+function showMessage(message) {
+  const modal = document.getElementById('messageModal');
+  if (!modal) return;
+  modal.querySelector('textarea').value = message;
+  modal.style.display = 'block';
+  modal.querySelector('.ok-button').focus();
+}
+
+function closeMessage() {
+  const modal = document.getElementById('messageModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function showConfirmDialog(message, onConfirm) {
+  const modal = document.getElementById('confirmModal');
+  if (!modal) {
+    // Fallback to built-in confirm if modal missing
+    if (confirm(message)) onConfirm();
+    return;
+  }
+  modal.querySelector('textarea').value = message;
+  modal.style.display = 'block';
+  const okBtn = modal.querySelector('.confirm-ok');
+  const cancelBtn = modal.querySelector('.confirm-cancel');
+  okBtn.focus();
+
+  // Handlers
+  function clean() {
+    modal.style.display = 'none';
+    okBtn.removeEventListener('click', okHandler);
+    cancelBtn.removeEventListener('click', cancelHandler);
+  }
+  function okHandler() {
+    clean();
+    onConfirm();
+  }
+  function cancelHandler() {
+    clean();
+  }
+  okBtn.addEventListener('click', okHandler);
+  cancelBtn.addEventListener('click', cancelHandler);
+}
+
+// Confirm and perform delete all
+function confirmDeleteAll() {
+  const modal = document.getElementById('deleteAllModal');
+  if (!modal) return;
+  const ta = modal.querySelector('textarea');
+  const confirmInput = ta ? ta.value.trim() : '';
+  if (confirmInput !== 'ELIMINAR TODO') {
+    showMessage('Por favor escriba "ELIMINAR TODO" en el cuadro de texto para confirmar la eliminación irreversible.');
+    return;
+  }
+
+  // Clear data
+  clients = [];
+  services = [];
+  saveDataToLocalStorage();
+  updateClientList();
+  updateServiceList();
+  populateClientSelect();
+  populateClientFilter();
+  populateReportClientFilter();
+  closeDeleteAllModal();
+  showMessage('Todos los registros han sido eliminados. Esta acción no puede deshacerse.');
+}
+
+// Add event listener for service list filter
+document.getElementById('serviceListFilter').addEventListener('change', updateServiceList);
+document.getElementById('serviceClientFilter').addEventListener('change', updateServiceList);
+
+// Insert delete-all modal markup into DOM along with generic message and confirm modals
+const deleteAllModalHtml = `
+<div id="deleteAllModal" class="modal" style="display:none;">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="deleteAllTitle">
+    <span class="close-button" onclick="closeDeleteAllModal()">&times;</span>
+    <h2 id="deleteAllTitle" style="color:#c0392b;">Eliminar Todos los Registros</h2>
+    <p><strong>Advertencia:</strong> Esta opción eliminará de forma permanente todos los clientes y servicios almacenados. Los datos no pueden ser restaurados.</p>
+    <p>Para confirmar, escriba exactamente <code>ELIMINAR TODO</code> en el cuadro de texto y presione "Eliminar Todo".</p>
+    <textarea placeholder="Escriba ELIMINAR TODO para confirmar" style="width:100%; height:80px; padding:8px; box-sizing:border-box; border:1px solid #ccc; border-radius:4px;"></textarea>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:12px;">
+      <button onclick="closeDeleteAllModal()" style="background:#6c757d; box-shadow:0 5px 0 #545b62;">Cancelar</button>
+      <button onclick="confirmDeleteAll()" style="background:#d9534f; box-shadow:0 5px 0 #b53d38;">Eliminar Todo</button>
+    </div>
+  </div>
+</div>
+
+<!-- Generic message modal -->
+<div id="messageModal" class="modal" style="display:none;">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="messageTitle">
+    <span class="close-button" onclick="closeMessage()">&times;</span>
+    <h2 id="messageTitle">Aviso</h2>
+    <textarea readonly style="width:100%; height:120px; padding:8px; box-sizing:border-box; border:1px solid #ccc; border-radius:4px; background:#f9f9f9;"></textarea>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:12px;">
+      <button class="ok-button" onclick="closeMessage()" style="background:#0066cc; box-shadow:0 5px 0 #004999; color:#fff;">OK</button>
+    </div>
+  </div>
+</div>
+
+<!-- Generic confirm modal -->
+<div id="confirmModal" class="modal" style="display:none;">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+    <span class="close-button" onclick="document.getElementById('confirmModal').style.display='none'">&times;</span>
+    <h2 id="confirmTitle">Confirmar</h2>
+    <textarea readonly style="width:100%; height:120px; padding:8px; box-sizing:border-box; border:1px solid #ccc; border-radius:4px; background:#f9f9f9;"></textarea>
+    <div style="display:flex; gap:10px; justify-content:flex-end; margin-top:12px;">
+      <button class="confirm-cancel" onclick="document.getElementById('confirmModal').style.display='none'" style="background:#6c757d; box-shadow:0 5px 0 #545b62;">Cancelar</button>
+      <button class="confirm-ok" style="background:#d9534f; box-shadow:0 5px 0 #b53d38; color:#fff;">Eliminar</button>
+    </div>
+  </div>
+</div>
+`;
+document.body.insertAdjacentHTML('beforeend', deleteAllModalHtml);
 
 // Help functions
 function showHelp() {
